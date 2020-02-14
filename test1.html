@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>тренинг</title>
+</head>
+<body>
+<script type="text/javascript">
+	
+	var lose = 0;
+	function translete(words){
+		while(words.length != 0){
+			var i = parseInt(Math.random() * words.length);
+			var answer = prompt('Как переводится слово: ' + words[i][0] + '?');
+			if (answer == words[i][1]) {
+			alert('Ты угадал, молодец!');
+			words.splice(i,1);
+			} else {
+			alert('Ты не угадал, косячник!');
+			lose++;
+			}
+		}
+	}
+	
+	var easywords = [
+	["war", "война"],
+	["blood", "кровь"],
+	["home", "дом"],
+	["snake", "змея"],
+	["child", "ребенок"],
+	];
+	
+	alert(easywords);
+	translete(easywords);
+
+	var hardwords = [
+	["housewife", "домохозяйка"],
+	["engine", "двигатель"],
+	["dangerous", "опасный"],
+	["programm", "программа"],
+	["spy", "шпион"],
+	];
+
+	alert(hardwords);
+	translete(hardwords);
+
+	alert('Ты допустил ' + lose + ' ошибок <br> Игра окончнена.' );
+
+</script>
+
+</body>
+</html>
